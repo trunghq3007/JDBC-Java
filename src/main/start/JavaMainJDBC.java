@@ -1,13 +1,13 @@
 package main.start;
 /**
- * 
+ * Java Application connect to Database via JDBC
  */
 
 //STEP 1. Import required packages
 import java.sql.*;
 
 /**
- * @description:
+ * @description:Java Application connect to Database via JDBC
  * @author: Admin
  * @time: 9:27:06 PM
  * @date: Mar 6, 2018
