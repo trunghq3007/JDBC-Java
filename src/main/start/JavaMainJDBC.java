@@ -51,6 +51,7 @@ public class JavaMainJDBC {
 			String sql;
 			sql = "SELECT * FROM Student";
 			ResultSet rs = stmt.executeQuery(sql);
+			// stmt.executeUpdate("")
 
 			// STEP 5: Extract data from result set
 			while (rs.next()) {
