@@ -4,6 +4,8 @@
 package main.start;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.rowset.JdbcRowSet;
 
@@ -34,6 +36,30 @@ public class PersonBean {
 		} catch (SQLException | ClassNotFoundException ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	public List<Person> getListPerson() {
+		List<Person> persons = new ArrayList<Person>();
+		try {
+			rowSet.setCommand("SELECT * FROM Person");
+			rowSet.execute();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+
+		try {
+			while (rowSet.next()) {
+
+				Person person = new Person(rowSet.getInt("personId"), rowSet.getString("firstName"),
+						rowSet.getString("middleName"), rowSet.getString("lastName"), rowSet.getString("email"),
+						rowSet.getString("phone"));
+				persons.add(person);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return persons;
 	}
 
 	public Person create(Person p) {

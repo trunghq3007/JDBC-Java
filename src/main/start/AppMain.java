@@ -17,7 +17,8 @@ public class AppMain {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// f.getContentPane().setLayout();
 		f.getContentPane().add(new PersonUI());
-		f.setSize(1200, 580);
+		//f.setSize(1200, 580);
+		f.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		f.setVisible(true);
 	}
 }
